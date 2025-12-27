@@ -1,0 +1,3 @@
+**/build/
+**/echoserver.egg-info/
+**/.venv/
