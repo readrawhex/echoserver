@@ -9,6 +9,7 @@ from flask import Flask, request, Request
 logging.getLogger("werkzeug").setLevel(logging.ERROR)
 
 app = Flask(__name__)
+args = None
 
 # Turn off CSRF token
 app.config["WTF_CSRF_ENABLED"] = False
@@ -61,6 +62,8 @@ def json_output():
 
 
 def main():
+    global args
+
     parser = argparse.ArgumentParser(description="light server for echoing back HTTP requests")
     parser.add_argument("--stdout", action="store_true", help="print HTTP request data to stdout")
     args = parser.parse_args()
